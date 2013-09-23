@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :karma_points
 
-  attr_accessible :first_name, :last_name, :email, :username
+  attr_accessible :first_name, :last_name, :email, :username, :karma
 
   validates :first_name, :presence => true
   validates :last_name, :presence => true
@@ -27,5 +27,9 @@ class User < ActiveRecord::Base
 
   def full_name
     "#{first_name} #{last_name}"
+  end
+
+  def update_karma
+    self.update_attributes(:karma => self.total_karma)
   end
 end
