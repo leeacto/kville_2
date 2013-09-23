@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   def index
-    @users = User.order('karma DESC').limit(50)
+    @page = params[:page]
+    @users = User.paginate(:page => params[:page], :per_page => 50).order('karma DESC')
   end
+
+
 end

@@ -7,6 +7,7 @@ gem 'bcrypt-ruby'
 
 gem 'pg'
 gem 'jquery-rails'
+gem 'will_paginate'
 
 group :development do
   gem 'quiet_assets'
@@ -16,6 +17,7 @@ end
 group :development, :test do
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'capybara'
 end
 
 group :test do
